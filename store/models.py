@@ -18,6 +18,7 @@ class Producer(models.Model):
 
 class Comand (models.Model):
     id = models.AutoField(primary_key=True)
+    game = models.ForeignKey(Game, on_delete=models.PROTECT)
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     price = models.FloatField()
 

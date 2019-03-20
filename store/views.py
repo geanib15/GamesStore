@@ -17,7 +17,7 @@ class GameDetail(DetailView):
 
 def addToBasket(request, pk):
     game = Game.objects.get(pk=pk)
-    comanda = Comand(user=request.user, price=game.price)
+    comanda = Comand(user=request.user, price=game.price, game=game)
     comanda.save()
     return redirect('store:gamedetail', pk)
 
