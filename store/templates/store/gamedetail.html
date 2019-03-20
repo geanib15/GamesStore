@@ -1,0 +1,13 @@
+{% extends "store/base.html" %}
+{% block content %}
+<h1>
+    Game: {{ game.name }}
+    {% if user.is_authenticated %}(<a href="">add</a>){% endif %}
+</h1>
+
+    <b>genre:</b> {{ game.genre }} <br>
+    <b>description:</b>{{ game.description }} <br>
+    <b>review:</b> {{ game.review }} <br>
+    <b>price:</b> {{ game.price }} <br>
+
+{% endblock %}

@@ -17,6 +17,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.views.generic import *
 from .models import *
+from .views import *
 
 
 urlpatterns = [
@@ -25,5 +26,10 @@ urlpatterns = [
            queryset=Game.objects.all(),
            context_object_name= 'gameslist',
            template_name='store/gameslist.html'),
-       name='gameslist')
+       name='gameslist'),
+
+    # URL DETAIL GAME
+    url(r'^game/(?P<pk>.+)/$',
+        GameDetail.as_view( ),
+        name='gamedetail'),
 ]
