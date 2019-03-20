@@ -37,7 +37,17 @@ urlpatterns = [
        name='shoppingbasket'),
 
     # URL DETAIL GAME
-    url(r'^game/(?P<pk>.+)/$',
+    url(r'^game/(?P<pk>\d+)/$',
         GameDetail.as_view( ),
         name='gamedetail'),
+
+    #CREATE COMAND
+    url(r'^game/(?P<pk>\d+)/add/$',
+        addToBasket,
+        name='comand'),
+
+    #BUSCADOR
+    url(r'^buscador/$',
+        buscador,
+        name='buscador'),
 ]

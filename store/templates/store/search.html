@@ -1,0 +1,16 @@
+{% extends "store/base.html" %}
+{% block title %}
+- SEARCH
+{% endblock %}
+{% block content %}
+<h1>
+    SEARCH RESULTS
+</h1>
+<ul>
+    {% for result in resultats %}
+        <li><a href="{% url 'store:gamedetail' result.id %}">{{ result.name }}</a></li>
+    {% empty %} <li> Sorry, there is not a game with this name!</li>
+    {% endfor %}
+
+</ul>
+{% endblock %}
