@@ -25,6 +25,9 @@
     {% block sidebar %}
         <ul>
             <li><a href="/store/">Home</a></li>
+            {% if user.is_authenticated %}
+                 <li><a href="/store/basket/">Basket</a></li>
+            {% endif %}
         </ul>
     {% endblock %}
 </div>

@@ -28,6 +28,14 @@ urlpatterns = [
            template_name='store/gameslist.html'),
        name='gameslist'),
 
+    #SHOPPING BASKET
+    url(r'^basket/$',
+       ListView.as_view(
+           queryset=Comand.objects.all(),
+           context_object_name= 'comands',
+           template_name='store/shoppingbasket.html'),
+       name='shoppingbasket'),
+
     # URL DETAIL GAME
     url(r'^game/(?P<pk>.+)/$',
         GameDetail.as_view( ),
