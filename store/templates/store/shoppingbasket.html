@@ -2,10 +2,11 @@
 {% block content %}
 <h1>
     Basket
-    {% if user.is_authenticated %}(<a href="">add</a>){% endif %}
 </h1>
     {% for comand in comands %}
-            {{ comand.id }} - {{ comand.price }}€ <br>
+        {% if request.user == comand.user %}
+            {{ comand.id }} - {{ comand.game.name }} - {{ comand.price }}€ <br>
+        {% endif %}
     {% empty %}Sorry, nothing in shopping basket.
     {% endfor %}
 {% endblock %}
